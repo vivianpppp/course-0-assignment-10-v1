@@ -1,0 +1,104 @@
+{
+  "version": 1.0,
+  "title": "Assignment 10: Structs",
+  "quiz": [
+    {
+      "question": "What symbol would be used to access members of a `struct`?",
+      "options": [
+        {
+          "value": "`_`",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "`->`",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "`\\-`",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "`.`",
+          "answer": true,
+          "explanation": "Correct! The period is used to access members in the `struct`."
+        }
+      ]
+    },
+    {
+      "question": "A function can return a `struct`.",
+      "options": [
+        {
+          "value": "True",
+          "answer": true,
+          "explanation": "Correct! `struct` types can be returned from functions just like `int`, `float`, or any other type we've learned about."
+        },
+        {
+          "value": "False",
+          "answer": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "A member of a `struct` cannot be a `struct`.",
+      "options": [
+        {
+          "value": "True",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "False",
+          "answer": true,
+          "explanation": "Correct! A `struct` can include **other** `struct` types as members."
+        }
+      ]
+    }
+  ],
+  "fix_code": [
+    {
+      "question": "This code isn't formatted correctly! Can you help fix it?",
+      "hints": [
+        {
+          "line_number": 6,
+          "hint": "Member variables should be on their own line."
+        }
+      ]
+    },
+    {
+      "question": "This code isn't compiling correctly! Can you help fix it? Be sure to also address any formatting errors.",
+      "hints": [
+        {
+          "line_number": 6,
+          "hint": "Member variables should be declared with semicolons not commas."
+        }
+      ]
+    },
+    {
+      "question": "This code isn't running correctly! Can you help fix it? Be sure to also address any formatting or syntax errors.",
+      "hints": [
+        {
+          "line_number": 19,
+          "hint": "It is important to make sure you are using the right element of the struct."
+        }
+      ]
+    }
+  ],
+  "invent_code": [
+    {
+      "question": "Lets practice creating various `struct` types.\n\n### Part 1\nCreate a struct which represents each of the following concepts.\n* Point (on the XY plane)\n* Rectangle (on the XY plane)\n* Driver's license\n* Calendar Appointment\n\n### Part 2\nCreate functions which are able to get user input for each `struct` that you build along with a function to print out that `struct`.",
+      "hints": []
+    },
+    {
+      "question": "This code was written by an intern to help them stay within various budgets for different categories for the summer. However, they need a bit more help finishing up their code. Can you help?",
+      "hints": []
+    },
+    {
+      "question": "### Part 1\nDefine a `Fraction` type. You wouldn't write a fraction as `1.5 / 2.3`, you'd write that as `15 / 23` so think about what the ideal type here is.\nBe sure to add the capability for a user to enter a `Fraction` and a function for printing your `Fraction` in a pretty format.\n\n### Part 2\nCreate a function which reduces your `Fraction`.\n\nExample: `25 / 100` can be reduced to `1 / 4`.\n\nExample: `1 / 2` would be reduced back to `1 / 2`.\n\n### Part 3\nIt's time for the best part: creating a calculator! In the past, we've written a calculator where we worked with whole numbers, now lets write a calculator that works with `Fraction`. However, the only operators we need to support are: `+` `-` `*` and `/`. The user should be able to continuously use the calculator until they type in `=`. Ideally a fraction should always be displayed in reduced form to the user.\n\n### Part 4\nThought exercise: What are some advantages to having a fraction calculator vs an integer calculator?",
+      "hints": []
+    }
+  ]
+}
