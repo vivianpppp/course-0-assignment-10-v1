@@ -3,11 +3,11 @@
 using namespace std;
 
 struct Hero {
-  string name,
-  string title,
-  unsigned int age,
-  string weapon
-}
+  string name;
+  string title;
+  unsigned int age;
+  string weapon;
+};
 
 int main() {
   Hero my_hero;
@@ -17,7 +17,7 @@ int main() {
   cin >> my_hero.title;
   cout << "What is your hero's age: ";
   cin >> my_hero.age;
-  cout << "What is your hero's weapon of choice: "
+  cout << "What is your hero's weapon of choice: ";
   cin >> my_hero.weapon;
   return 0;
 }
