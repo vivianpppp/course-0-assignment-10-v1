@@ -38,23 +38,36 @@ void Print(Budget budget) {
     }
     cout << '$' << budget.limit;
 }
+
+void Print2(Purchase purchase) {
+    if (purchase.category == 1) {
+        cout << "Shopping: ";
+    } else if (purchase.category == 2) {
+        cout << "Transportation: ";
+    } else if (purchase.category == 3) {
+        cout << "Other: ";
+    } else {
+        cout << "Error Invalid Category! ";
+    }
+    cout << '$' << purchase.amount;
+}
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
 // -----------------------------------------------------------------------
 
-Budget FromUser() {
-    Budget budget;
-    cin << budget.category;
-    cin << budget.limit;
-    return budget;
+Budget GetBudgetFromUser() {
+  Budget budget;
+  cin >> budget.category;
+  cin >> budget.limit;
+  return budget;
 }
 
 
-Purchase FromUser() {
-Purchase item;
-    cin << item.category;
-cin << item.limit;
-    return item;
+Purchase GetPurchaseFromUser() {
+  Purchase item;
+  cin >> item.category;
+  cin >> item.amount;
+  return item;
 }
 
 
@@ -66,6 +79,7 @@ cin << item.limit;
 /* The comment for this function is removed, try to understand what this
  * function does by reading it. Once you understand, you are welcome to update
  * this comment to help you remember.
+ * This section is checking if you're within the budget or not.
  */
 void BudgetStatus(Budget budget, int total_spent) {
     cout << "Budget ";
@@ -82,31 +96,32 @@ void BudgetStatus(Budget budget, int total_spent) {
  * function does by reading it. Once you understand, you are welcome to update
  * this comment to help you remember. Feel free to add comments before lines in
  * the code below as well.
+ *
  */
 int main() {
     cout << "Enter a limit for shopping category" << endl;
-    Budget limit_shopping = GetBudgetFromUser(1);
+    Budget limit_shopping = GetBudgetFromUser();
     Print(limit_shopping);
     cout << endl;
 
     cout << "Enter a limit for transportation category" << endl;
-    Budget limit_transportation = GetBudgetFromUser(2);
+    Budget limit_transportation = GetBudgetFromUser();
     Print(limit_transportation);
     cout << endl;
 
     cout << "Enter a limit for other category" << endl;
-    Budget limit_other = GetBudgetFromUser(3);
+    Budget limit_other = GetBudgetFromUser();
     Print(limit_other);
     cout << endl;
 
     Purchase item0 = GetPurchaseFromUser();
-    Print(item0);
+    Print2(item0);
 
     Purchase item1 = GetPurchaseFromUser();
-    Print(item1);
+    Print2(item1);
 
     Purchase item2 = GetPurchaseFromUser();
-    Print(item2);
+    Print2(item2);
 
     int total_other = GetTotalForCategory(limit_other.category, item0, item1, item2);
     int total_shopping = GetTotalForCategory(limit_shopping.category, item0, item1, item2);
