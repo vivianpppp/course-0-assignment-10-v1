@@ -57,7 +57,9 @@ void Print2(Purchase purchase) {
 
 Budget GetBudgetFromUser() {
   Budget budget;
+  cout << "What is the item category?";
   cin >> budget.category;
+  cout << "What is the limit amount?";
   cin >> budget.limit;
   return budget;
 }
@@ -65,7 +67,9 @@ Budget GetBudgetFromUser() {
 
 Purchase GetPurchaseFromUser() {
   Purchase item;
+  cout << "What is the item category?";
   cin >> item.category;
+  cout << "What is the purchase amount?";
   cin >> item.amount;
   return item;
 }
@@ -92,6 +96,20 @@ void BudgetStatus(Budget budget, int total_spent) {
     cout << endl;
 }
 
+int GetTotalForCategory(unsigned int category, Purchase item0, Purchase item1, Purchase item2) {
+  int total_val = 0;
+  if (category == item0.category) {
+    total_val = item0.amount;
+  }
+  if (category == item1.category) {
+    total_val = total_val + item1.amount;
+  }
+  if (category == item2.category) {
+    total_val = total_val + item2.amount;
+  }
+  return total_val;
+}
+
 /* The comment for this function is removed, try to understand what this
  * function does by reading it. Once you understand, you are welcome to update
  * this comment to help you remember. Feel free to add comments before lines in
@@ -99,6 +117,9 @@ void BudgetStatus(Budget budget, int total_spent) {
  *
  */
 int main() {
+    cout << "Category Types:" << endl;
+    cout << "1: Shopping" << endl << "2: Transportation" << endl << "3: Other" << endl;
+
     cout << "Enter a limit for shopping category" << endl;
     Budget limit_shopping = GetBudgetFromUser();
     Print(limit_shopping);
@@ -114,14 +135,20 @@ int main() {
     Print(limit_other);
     cout << endl;
 
+    cout << "Enter information about first item purchased." << endl;
     Purchase item0 = GetPurchaseFromUser();
     Print2(item0);
+    cout << endl;
 
+    cout << "Enter information about second item purchased." << endl;
     Purchase item1 = GetPurchaseFromUser();
     Print2(item1);
+    cout << endl;
 
+    cout << "Enter information about third item purchased." << endl;
     Purchase item2 = GetPurchaseFromUser();
     Print2(item2);
+    cout << endl;
 
     int total_other = GetTotalForCategory(limit_other.category, item0, item1, item2);
     int total_shopping = GetTotalForCategory(limit_shopping.category, item0, item1, item2);
